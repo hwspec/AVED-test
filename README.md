@@ -7,11 +7,12 @@ Full documentation for the ALVEO Versal Example Design can be found at the follo
 
 
 # Personal Use Setup
+```
 source /soft/fpga/amd/2025.1/Vivado/settings64.sh 
 source /soft/fpga/amd/2025.1/Vitis/settings64.sh
 export XILINXD_LICENSE_FILE=/soft/fpga/amd/2025.1/data/ip/core_licenses/alveo00_smbus.lic
 export PATH="/soft/fpga/amd/2025.1/gnu/armr5/lin/gcc-arm-none-eabi/bin:$PATH"
-
+```
 
 # Ready to run 
 ```
