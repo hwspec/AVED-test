@@ -32,9 +32,6 @@ proc do_aved_build {} {
   # Generate all output products
   generate_target all [get_files "${bd_name}.bd"]
 
-  # Write xsa
-  write_hw_platform -force -fixed -minimal "${build_dir}/${design_name}.xsa"
-
   # Write design bd out (optional)
   file mkdir ${build_dir}/bd_gen
   write_bd_tcl -force -no_ip_version -hier_blks [get_bd_cells /] "${build_dir}/bd_gen/create_bd_design_final.tcl"
@@ -49,6 +46,10 @@ proc do_aved_build {} {
   if {[get_property PROGRESS [get_runs impl_1]] != "100%"} {
     common::send_msg_id {BUILD_HW-6} {ERROR} "Implementation failed"
   }
+
+  # Write XSA after implementation so sdtgen/HSI get a valid hardware handoff
+  # (pre-impl XSA can cause "versal_sdt/...xsa is not valid Hardware Handoff File")
+  write_hw_platform -force -fixed -file "${build_dir}/${design_name}.xsa"
 
   common::send_msg_id {BUILD_HW-8} {INFO} {Done!}
 }

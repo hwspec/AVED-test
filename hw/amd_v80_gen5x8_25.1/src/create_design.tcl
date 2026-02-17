@@ -31,10 +31,17 @@ proc do_aved_create_design { } {
   # Create the project targeting its part
   create_project prj "[pwd]/build" -part xcv80-lsva4737-2MHP-e-S -force
 
+  # Ensure automatic source management / compile order so module
+  # references (like pca_axi_mmio_bridge_bd_wrapper_v) are resolved.
+  set_property source_mgmt_mode All [current_project]
+  update_compile_order -fileset sources_1
 
   # Set project IP repositories
   set_property ip_repo_paths "${src_dir}/iprepo" [current_project]
   update_ip_catalog
+
+  # Add PCA RTL (user design)
+  source "$src_dir/create_pca.tcl"
 
   # Create block diagram
   create_bd_design  ${bd_name}
