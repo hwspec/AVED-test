@@ -6,8 +6,10 @@ Full documentation for the ALVEO Versal Example Design can be found at the follo
 [xilinx.github.io/AVED/](https://xilinx.github.io/AVED/)
 
 
-# Personal Use Setup
+# Personal Use Setup (Alveo0[0-1]) Node) 
 ```
+git clone https://github.com/hwspec/AVED-test.git
+
 source /soft/fpga/amd/2025.1/Vivado/settings64.sh 
 source /soft/fpga/amd/2025.1/Vitis/settings64.sh
 export XILINXD_LICENSE_FILE=/soft/fpga/amd/2025.1/data/ip/core_licenses/alveo00_smbus.lic
