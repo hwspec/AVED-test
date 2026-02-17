@@ -6,7 +6,7 @@ Full documentation for the ALVEO Versal Example Design can be found at the follo
 [xilinx.github.io/AVED/](https://xilinx.github.io/AVED/)
 
 
-# Personal Use Setup (Alveo0[0-1]) Node) 
+# Personal Use Setup Alveo0[0-1] Nodes 
 ```
 git clone https://github.com/hwspec/AVED-test.git
 
