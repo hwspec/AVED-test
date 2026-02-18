@@ -21,3 +21,8 @@ export PATH="/soft/fpga/amd/2025.1/gnu/armr5/lin/gcc-arm-none-eabi/bin:$PATH"
 cd hw/amd_v80_gen5x8_25.1/
 ./build_all.sh
 ```
+
+# Program Card 
+```
+sudo /usr/local/bin/ami_tool cfgmem_program -d b1:00.0 -t primary -i /path/to/amd_v80_gen5x8_25.1_nofpt.pdi -p 0 -y -q
+```
