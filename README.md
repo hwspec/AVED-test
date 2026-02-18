@@ -26,3 +26,4 @@ cd hw/amd_v80_gen5x8_25.1/
 ```
 sudo /usr/local/bin/ami_tool cfgmem_program -d b1:00.0 -t primary -i /path/to/amd_v80_gen5x8_25.1_nofpt.pdi -p 0 -y -q
 ```
+The .pdi file you use should be in the build/ directory 
