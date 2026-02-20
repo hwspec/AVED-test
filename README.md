@@ -30,7 +30,7 @@ The .pdi file you use should be in the build/ directory
 
 
 # Helpful Debugging Commands
-sudo ami_tool reload -t sbr -d b1:00.0 – **relaod card after programming**
+```sudo ami_tool reload -t sbr -d b1:00.0```**relaod card after programming**
 
 grep -i "logic-uuid" hw/amd_v80_gen5x8_25.1/build/vivado.log – **chekcs current builds UUID**
 
