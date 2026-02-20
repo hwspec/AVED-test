@@ -30,7 +30,7 @@ XSA=${XSA:-$(realpath ${HW_DIR})/build/${DESIGN}.xsa}
 # Step HW
 pushd ${HW_DIR}
   mkdir -p ./build
-  vivado -source src/create_design.tcl -source src/build_design.tcl -mode batch -nojournal -log ./build/vivado.log
+  vivado -source "${HW_DIR}/src/create_design.tcl" -source "${HW_DIR}/src/build_design.tcl" -mode batch -nojournal -log ./build/vivado.log
 popd
 
 # Step FW
