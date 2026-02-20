@@ -27,3 +27,13 @@ cd hw/amd_v80_gen5x8_25.1/
 sudo /usr/local/bin/ami_tool cfgmem_program -d b1:00.0 -t primary -i /path/to/amd_v80_gen5x8_25.1_nofpt.pdi -p 0 -y -q
 ```
 The .pdi file you use should be in the build/ directory 
+
+
+# Helpful Debugging Commands
+```
+sudo ami_tool reload -t sbr -d b1:00.0 – **relaod card after programming**
+grep -i "logic-uuid" hw/amd_v80_gen5x8_25.1/build/vivado.log – **chekcs current builds UUID**
+ami_tool pcieinfo -d b1:00.0 -f table – **Displays detailed PCIe link and device information (e.g., link speed, width, status) for the specified device in table format.**
+ami_tool sensors -d b1:00.0 – **Reads and reports onboard hardware sensor data (e.g., temperature, voltage, power) for the specified device.**
+ami_tool mfg_info -d b1:00.0 – **Shows manufacturing information for the device, such as serial number, part number, firmware version, and other identification details.**
+```
